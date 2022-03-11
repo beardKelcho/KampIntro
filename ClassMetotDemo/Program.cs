@@ -35,6 +35,8 @@ namespace ClassMetotDemo
             musterimanager.musteriListeleme(musteriler);
             musterimanager.Sil(musteri2);
             musterimanager.musteriListeleme(musteriler);
+
+
         }
     }
 }
