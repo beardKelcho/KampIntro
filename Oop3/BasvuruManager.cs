@@ -8,12 +8,18 @@ namespace Oop3
 {
     class BasvuruManager
     {
-        public void BasvuruYap(IKrediManager krediManager) // hangi kredi türünün tipi gönderilirse o çalışır.
+        public void BasvuruYap(IKrediManager krediManager, List<ILoogerService> loggerServices) // hangi kredi türünün tipi gönderilirse o çalışır.
         {
             // başvuran bilgilerini değerlendirme
             //
+            
 
             krediManager.Hesapla();
+            foreach (var loggerService in loggerServices)
+            {
+                loggerService.Log();
+            }           
+            
         }
 
         public void KrediOnBilgilendirmesiYap(List<IKrediManager> krediler)
@@ -21,6 +27,7 @@ namespace Oop3
             foreach (var kredi in krediler)
             {
                 kredi.Hesapla();
+                
             }
         }
     }
